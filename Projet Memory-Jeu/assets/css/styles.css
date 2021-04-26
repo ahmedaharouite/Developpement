@@ -1,0 +1,209 @@
+#sidebar {
+    width: inherit;
+    min-width: 220px;
+    max-width: 220px;
+    background-color: #f5f5f5;
+    float: left;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#main {
+    height: 100%;
+    overflow: auto;
+}
+
+
+/*
+ * off Canvas sidebar
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 768px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+        width: calc(100% + 220px);
+    }
+    .row-offcanvas-left {
+        left: -220px;
+    }
+    .row-offcanvas-left.active {
+        left: 0;
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+    }
+}
+
+.inner a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+
+/*carte*/
+
+.card {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    margin: .25% .5% .25% 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#cards {
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+    padding: 1% .5% 1% 1%;
+    display: none;
+}
+
+#board {
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+}
+
+.card:hover {
+    cursor: pointer
+}
+
+.carre {
+    width: 100%;
+    height: 100px;
+    background: rgb(95, 16, 168);
+    text-align: center;
+    transition: all 1s ease-in;
+}
+
+.carreTrouve {
+    opacity: 50%;
+}
+
+.valCard {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.valCard h1 {
+    line-height: 95px;
+    height: 100%;
+}
+
+
+/*div*/
+
+#menu_game {
+    display: none;
+}
+
+#end_game {
+    display: none;
+}
+
+#buttonReprendre {
+    display: none;
+}
+
+#buttonPause {
+    display: none;
+}
+
+#menu_score {
+    display: none;
+}
+
+#cardsfind {
+    display: none;
+}
+
+
+/*annimation carte trouvée*/
+
+.moveIt {
+    transform: rotateZ(360deg);
+}
+
+
+/*taille du texte victoire*/
+
+#text_end {
+    font-size: 100px;
+}
+
+
+/*Chrono*/
+
+#chrono {
+    display: none;
+}
+
+.base-timer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}

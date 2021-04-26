@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title> tp2 : validation de formulaires </title>
+	<script 
+		src="validation.js" type="text/javascript">
+	</script>
+</head>
+
+<body>
+<form name="form1">
+<table>
+<tr>
+	<td>Chiffre 1 : </td>
+	<td><input type="text" name="chiffre1"></td>
+	<td><i>(doit etre numerique)</i></td>
+</tr>
+<tr>
+	<td>Chiffre 2 :</td>
+	<td><input type="text" name="chiffre2"></td>
+	<td><i>(doit etre numerique et dans [-10..10])</i></td>
+</tr>
+<tr>
+	<td>Code Postal :</td>
+	<td><input type="text" name="codepostal"></td>
+	<td><i>(5 chiffres)</i></td>
+</tr>
+<tr>
+	<td>Pseudo : </td>
+	<td><input type="text" name="pseudo"></td>
+	<td><i>(doit avoir entre 3 et 10 caracteres)</i></td>
+</tr>
+<tr>
+	<td>Mot de passe : </td>
+	<td><input type="password" name="passwd"></td>
+	<td><i>(doit avoir entre 8 et 12 caracteres)</i></td>
+</tr>
+<tr>
+	<td>Votre couleur préférée : </td>
+	<td>
+		<select name="couleur">
+			<option/>
+			<option value="rouge">Rouge</option>
+			<option value="vert">Vert</option>
+			<option value="bleu">Bleu</option>
+			<option value="jaune">Jaune</option>
+			<option value="violet">Violet</option>
+			<option value="marron">Marron</option>
+			<option value="lilas">Lilas</option>
+		</select>
+
+	</td>
+	<td><i>(choix obligatoire)</i></td>
+</tr>
+<tr>
+	<td colspan="3" align="center">
+		<input type="button" value="Valider" onclick="validation();">
+	</td>
+</table>
+</form>
+</body>
+</html>

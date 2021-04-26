@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title> TP 2 : Modification des images </title>
+	<script type="text/javascript">
+		function clicclac(unObjet) {
+			// Test de la valeur de l'objet
+			if (unObjet.value != undefined)
+			{
+				if (unObjet.value=='clac')
+				{
+					unObjet.value='clic'; //Changement de la valeur de l'objet
+				} else {
+					unObjet.value='clac'; // Autre changement ...
+				}
+			}
+		}
+		
+		//Exo1
+		function imageChange(objetImage, nomImage){
+			//L'attribut src prend une nouvelle source appartenant à une image
+			objetImage.src = nomImage;
+		}
+		
+		//Exo2
+		let tabSrc = ["papillon1.jpg", "papillon2.jpg", "papillon3.jpg", "papillon4.jpg"];
+		
+		function sleep(ms) {
+		  return new Promise(
+			resolve => setTimeout(resolve, ms)
+		  );
+		}
+		
+		async function imageChange2(){
+			//Récupération de l'image par son id
+			let objetImage = document.getElementById('idImage');
+			
+			//Boucle infinie
+			while(true){
+				for(let i=0; i<tabSrc.length; i++){				
+					imageChange(objetImage, tabSrc[i]); //Changement de source
+					await sleep(2000); // 2 secondes de pause
+				}
+			}
+		}
+		
+		
+	</script>
+</head>
+
+<body onload="imageChange2()">
+
+<hr/>
+<img src="email.gif" width="149" height="40" border="0" onmouseover="imageChange(this, 'email_over.gif')" onmouseout="imageChange(this, 'email.gif')" onclick="imageChange(this, 'email_click.gif')"/>
+<img src="home.gif" width="149" height="39" border="0" onmouseover="imageChange(this, 'home_over.gif')" onmouseout="imageChange(this, 'home.gif')" onclick="imageChange(this, 'home_click.gif')"/>
+<hr/>
+
+<hr/>
+<input type="button" value="cliquez ici pour voir" onclick="clicclac(this)"/>
+<hr/>
+
+<img id="idImage" src="papillon1.jpg" width="640" height="480" border="0"/>
+
+
+</body>
+</html>

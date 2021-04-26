@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Memory</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/memory.js"></script>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="title">Projet PWCR</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="memory.html" class="active">Jouer</a></li>
+                <li><a href="regles.html">Règles</a></li>
+                <li><a href="consignes.html">Consignes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major" id="titre">Jeu du Memory</h1>
+                <div id="configuration">
+                    <br>
+                    <h2>Configuration de la partie :</h2>
+                    <form method="post" action="#" onsubmit="submitForm();return false">
+                        <div class="row gtr-uniform">
+                            <div class="features">
+                                <section>
+                                    <span class="icon solid major fa-cog"></span>
+                                    <h3>Paramètres de jeu</h3>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="player-name" id="player-name" value="" placeholder="Pseudo" />
+                                    </div>
+                                    <br>
+                                    <div class="col-12">
+                                        <select name="choix-grille" id="choix-grille">
+                                        <option value="20" disabled selected hidden>Choix de grille</option>
+                                        <option value="12" required>3 x 4</option>
+                                        <option value="16" required>4 x 4</option>
+                                        <option value="20" required>4 x 5</option>
+                                        <option value="30" required>5 x 6</option>
+                                        <option value="36" required>6 x 6</option>
+                                    </select>
+                                    </div>
+                                    <br>
+                                    <h3>Niveau de jeu</h3>
+                                    <div class="col-4 col-12-small">
+                                        <input type="radio" id="niveau-facile" name="niveau" checked>
+                                        <label for="niveau-facile">Facile</label>
+                                    </div>
+                                    <div class="col-4 col-12-small">
+                                        <input type="radio" id="niveau-normal" name="niveau">
+                                        <label for="niveau-normal">Normal</label>
+                                    </div>
+                                    <div class="col-4 col-12-small">
+                                        <input type="radio" id="niveau-difficile" name="niveau">
+                                        <label for="niveau-difficile">Difficile</label>
+                                    </div>
+                                </section>
+                                <section>
+                                    <span class="icon solid major fa-desktop"></span>
+                                    <h3>Paramètres d'affichage</h3>
+                                    <div class="col-6 col-12-small">
+                                        <input type="checkbox" id="temps" name="temps" checked>
+                                        <label for="temps">Afficher le temps</label>
+                                    </div>
+                                    <div class="col-6 col-12-small">
+                                        <input type="checkbox" id="score" name="score" checked>
+                                        <label for="score">Afficher le score</label>
+                                    </div>
+                                    <br><br><br><br>
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Jouer" class="primary" id="submit" /></li>
+                                            <li><input type="reset" value="Renitialiser" /></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="menu_score">
+                    <div class="row gtr-uniform">
+                        <div class="features">
+                            <section>
+                                <span class="icon solid major fa-desktop"></span>
+                                <h3>Score</h3>
+                                <div id="score_div">
+                                    <h1 id="points" value="0">0 points</h1>
+                                </div>
+                            </section>
+                            <section>
+                                <span class="icon solid major fa-desktop"></span>
+                                <h3>Temps</h3>
+                                <div id="chrono"></div>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="end_game">
+                    <h1 class="major">VICTOIRE</h1>
+                    <h2>Statistiques de la partie</h2><br>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>Joueur</th>
+                                    <th>Choix grille</th>
+                                    <th>Choix niveau</th>
+                                    <th>Nombre de coups</th>
+                                    <th>Coups échoués</th>
+                                    <th>Coups réussis</th>
+                                    <th>Combo max</th>
+                                    <th>Vitesse de jeu</th>
+                                    <th>Temps réalisé</th>
+                                    <th>Score finale</th>
+                                </tr>
+                            </thead>
+                            <tbody id="Statistiques">
+                            </tbody>
+                        </table>
+                    </div>
+                    <br><br>
+
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input id="buttonRecommencerStat" type="button" value="Recommencer" onclick="recommencerStat()"></input>
+                            </li>
+                            <li><a href="index.html" class="button">Quitter le jeu</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="board">
+                    <div id="cards">
+                        <br><br>
+                    </div>
+                    <br>
+                    <div id="cardsfind">
+
+                    </div><br>
+                </div>
+
+
+                <div id="menu_game">
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input id="buttonReprendre" type="button" value="Reprendre" onclick="startTimer(), afficherButtonPause(), masquerButtonReprendre(), afficherGrille()" /></li>
+                            <li><input id="buttonPause" type="button" value="Pause" onclick="onTimesUp(), afficherButtonReprendre(), masquerButtonPause(), masquerGrille()" /></li>
+                            <li>
+                                <input id="buttonRecommencerMenu" type="button" value="Recommencer" onclick="recommencerMenu()"></input>
+                            </li>
+                            <li><a href="index.html" class="button">Quitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Untitled. All rights reserved.</li>
+                    <li>Ahmed Aharouite.</li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

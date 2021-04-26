@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Memory</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="title">Projet PWCR</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="memory.html">Jouer</a></li>
+                <li><a href="regles.html">Règles</a></li>
+                <li><a href="consignes.html" class="active">Consignes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">PROJET : MEMORY</h1>
+                <h3>A RENDRE EN FIN DE TP :</h3>
+                <blockquote>1 fichier ZIP nommé MONNOM_monprenom.zip<br>Il doit contenir votre mémo de conception (au format .pdf) et l'ensemble des fichiers permettant de faire fonctionner votre projet (html, javascript, css, librairies).</blockquote>
+                <div class="row">
+                    <div class="col-6 col-12-medium">
+                        <h2>Sujet : </h2>
+                        <p>Vous devez réaliser en JavaScript (et Jquery si vous le souhaitez) un jeu de MEMORY.</p>
+                        <h2>Contraintes du jeu</h2>
+                        <ul>
+                            <li>Le jeu est constitué plusieurs paires de cartes numérotées.</li>
+                            <li>Les cartes sont présentées face cachée au départ du jeu.</li>
+                            <li>En choisissant à chaque tour 2 cartes (qui sont alors retournées) le joueur dois essayer d'éliminer toutes les cartes. Si les 2 cartes sélectionnées sont identiques elles sont éliminées (trouvées) sinon elles restent en jeu
+                                (et sont à nouveau masquées).</li>
+                            <li>Il est possible à tout moment de recommencer une nouvelle partie</li>
+                            <li><strong>Il existe un mode « normal » </strong>(où les cartes sont mélangées) et <strong>un mode « simplifié » </strong>(qui permet de terminer la partie très rapidement car les cartes ne sont pas mélangées)</li>
+                            <li><strong>Le score </strong>est calculé en continu tout au long de la partie. Il est constitué du nombre de tentatives (sélectionner 2 cartes est une tentative).</li>
+                            <li>Votre programme devra indiquer clairement :<br> ◦ Les cartes trouvées et les cartes non trouvées<br> ◦ La fin de partie</li>
+                            <li><strong>Au minimum on devra pouvoir jouer une partie avec 10 paires </strong>de cartes mais vous gagnerez des points supplémentaires en proposant des options de jeu (et notamment le choix du nombre de carte à trouver).</li>
+                            <li>Pour le développement de votre programme, <strong>vous devez impérativement utiliser les classes développées lors de la première séance (et disponible sur Moodle) : CodeMemory, ReponseMemory et Memory</strong>.</li>
+                        </ul>
+                        <h2>Critères d'évaluation : </h2>
+                        <ul>
+                            <li>Zip mal nommé => -10 points</li>
+                            <li>Rendu en retard => -10 points/jour</li>
+                            <li>Ne pas utiliser les classes CodeMemory, ReponseMemory et Memory => -10 points</li>
+                            <li>Absence du mémo de conception => -1 points</li>
+                        </ul>
+                        <hr />
+                        <ul>
+                            <li>Mémo de conception présent et sérieusement renseigné => 2 points</li>
+                            <li>Application fonctionnelle (fonctionnalités minimales ok) => 8 points</li>
+                        </ul>
+                        <hr />
+                        <ul>
+                            <li>Votre code (HTML,CSS et JavaScript) Clarté, simplicité et efficacité du code et des commentaires => 2 points</li>
+                            <li>Votre ergonomie (compréhension immédiate du fonctionnement, informations claires sur l’état d’avancement de la partie) => 2 points</li>
+                            <li>Design « soigné » (propre et efficace) => 2 points</li>
+                            <li>Animations et/ou effets sonores à bon escient => 1 points</li>
+                            <li>fonctionnalités complémentaires <br>- pouvoir choisir le nombre de cartes est une option souhaitable <br> - Vous pouvez imaginer d’autres options => 3 points</li>
+                        </ul>
+                        <hr />
+                        <ul>
+                            <li>Point de notation complémentaire mérité (expliquer pourquoi en fin de dossier de conception) => X points</li>
+                        </ul>
+                        <p>Note maximale : 20</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Ahmed Aharouite.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
