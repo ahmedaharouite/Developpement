@@ -1,3 +1,0 @@
-[submodule "spec_settings"]
-	path = edt/edtweb/spec_settings
-	url = git@framagit.org:poulpos/settings-edt-iut-blagnac.git
